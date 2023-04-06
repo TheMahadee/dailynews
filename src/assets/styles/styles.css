@@ -2,7 +2,6 @@ body,
 html {
   font-family: "Alkatra", cursive;
 
-  /* 👇️ or use Operating system default fonts 👇️ */
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
@@ -38,35 +37,31 @@ nav {
   font-weight: bold;
 }
 
-/*////////////////////////////////////
-            MASONRY CSS
-/////////////////////////////////////*/
-
-.my-masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
+.root-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-left: -30px; /* gutter size offset */
   width: auto;
 }
-.my-masonry-grid_column {
+.root-grid-column {
   padding-left: 30px; /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
-.my-masonry-grid_column > div {
+.root-grid-column > div {
   /* change div to reference your elements you put in <Masonry> */
   background: grey;
   margin-bottom: 30px;
 }
 
-.my-masonry-grid .content {
+.root-grid .content {
   padding: 15px;
   background: white;
   border: 1px solid #dbdbdb;
 }
-.my-masonry-grid .content .title {
+.root-grid .content .title {
   border-bottom: 1px solid #ececec;
   font-size: 23px;
   margin-bottom: 12px;
@@ -74,11 +69,11 @@ nav {
   font-weight: 500;
 }
 
-.my-masonry-grid .content .excerpt {
+.root-grid .content .excerpt {
   font-weight: 100;
 }
 
-.my-masonry-grid .author {
+.root-grid .author {
   padding: 5px 10px;
   font-size: 12px;
   background: #dcdcdc;
@@ -86,20 +81,18 @@ nav {
 }
 
 @media (max-width: 800px) {
-  .my-masonry-grid {
+  .root-grid {
     margin-left: -15px; /* gutter size offset */
   }
-  .my-masonry-grid_column {
+  .root-grid-column {
     padding-left: 15px; /* gutter size offset */
   }
-  .my-masonry-grid_column > div {
+  .root-grid-column > div {
     margin-bottom: 15px; /* space between items */
   }
 }
 
-/*////////////////////////////////////
-            NEWSLETTER
-/////////////////////////////////////*/
+/* NEWSLETTER */
 
 .newsletter_container {
   margin-top: 20px;
@@ -117,9 +110,7 @@ nav {
   margin: 0 auto;
 }
 
-/*////////////////////////////////////
-            ARTICLE
-/////////////////////////////////////*/
+/* ARTICLE */
 
 .article_container h1 {
   font-size: 58px;
