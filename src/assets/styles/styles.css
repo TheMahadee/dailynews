@@ -19,6 +19,10 @@ html {
   background: #f5f5f5;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .yellotail {
   font-family: "Yellowtail", cursive;
 }
@@ -37,31 +41,35 @@ nav {
   font-weight: bold;
 }
 
-.root-grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
+/*////////////////////////////////////
+          MASONRY CSS
+/////////////////////////////////////*/
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
   margin-left: -30px; /* gutter size offset */
   width: auto;
 }
-.root-grid-column {
+.my-masonry-grid_column {
   padding-left: 30px; /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
-.root-grid-column > div {
+.my-masonry-grid_column > div {
   /* change div to reference your elements you put in <Masonry> */
   background: grey;
   margin-bottom: 30px;
 }
 
-.root-grid .content {
+.my-masonry-grid .content {
   padding: 15px;
   background: white;
   border: 1px solid #dbdbdb;
 }
-.root-grid .content .title {
+.my-masonry-grid .content .title {
   border-bottom: 1px solid #ececec;
   font-size: 23px;
   margin-bottom: 12px;
@@ -69,11 +77,11 @@ nav {
   font-weight: 500;
 }
 
-.root-grid .content .excerpt {
+.my-masonry-grid .content .excerpt {
   font-weight: 100;
 }
 
-.root-grid .author {
+.my-masonry-grid .author {
   padding: 5px 10px;
   font-size: 12px;
   background: #dcdcdc;
@@ -81,49 +89,53 @@ nav {
 }
 
 @media (max-width: 800px) {
-  .root-grid {
+  .my-masonry-grid {
     margin-left: -15px; /* gutter size offset */
   }
-  .root-grid-column {
+  .my-masonry-grid_column {
     padding-left: 15px; /* gutter size offset */
   }
-  .root-grid-column > div {
+  .my-masonry-grid_column > div {
     margin-bottom: 15px; /* space between items */
   }
 }
 
-/* NEWSLETTER */
+/*////////////////////////////////////
+          NEWSLETTER
+/////////////////////////////////////*/
 
-.newsletter_container {
+.newsletter-container {
   margin-top: 20px;
   border-top: 5px solid #3c3c3c;
   padding-top: 20px;
 }
 
-.newsletter_container h1 {
+.newsletter-container h1 {
   text-align: center;
   font-family: "Yellowtail", cursive;
 }
 
-.newsletter_container .form {
+.newsletter-container .form {
   width: 500px;
   margin: 0 auto;
 }
 
-/* ARTICLE */
+/*////////////////////////////////////
+          ARTICLE
+/////////////////////////////////////*/
 
-.article_container h1 {
+.article-container h1 {
   font-size: 58px;
   font-weight: 300;
 }
 
-.article_container .image {
+.article-container .image {
   background-size: cover !important;
   background-repeat: no-repeat !important;
   width: 100%;
   height: 500px;
 }
-.article_container .author {
+.article-container .author {
   margin-top: 10px;
   font-style: italic;
   font-weight: 300;
