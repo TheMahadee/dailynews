@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './components/mainLayout';
-import { Home, Header } from './views';
+import { Home, Header, Contact } from './views';
 
 export default function RoutesCore() {
   return (
@@ -10,6 +10,7 @@ export default function RoutesCore() {
       <MainLayout>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>

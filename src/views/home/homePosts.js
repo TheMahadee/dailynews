@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getPosts } from '../../store/actions';
+import { getPosts, clearPosts } from '../../store/actions';
 
 import {Spinner, Button} from 'react-bootstrap';
 import Masonry from 'react-masonry-css';
@@ -8,23 +8,24 @@ import Moment from 'react-moment';
 import { LinkContainer } from 'react-router-bootstrap';
  
 export default function HomePosts() {
-  const [pagination, setPagination] = 
-    useState({page: 1, order: 'desc', limit: 6});
-  const [loading, setLoading] = useState(false);
+  var pagination = {page: 1, order: 'desc', limit: 6};
+  const [loading, setLoading] = useState(true);
   const homePost = useSelector(state => state.posts);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPosts(homePost, pagination));
-    if(pagination.page === 1) {
-      setPagination({...pagination, page: pagination.page + 1});
-    }
+    dispatch(getPosts(homePost, pagination)).then(() => {
+      setLoading(false);
+    });
+    return () => {
+      dispatch(clearPosts());
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   const loadMorePosts = () => {
     setLoading(true);
-    setPagination({...pagination, page: pagination.page + 1});
+    pagination = {...pagination, page: pagination.page + 1};
     dispatch(getPosts(homePost, pagination)).then(() => {
       setLoading(false);
     }); 
